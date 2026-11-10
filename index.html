@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Benson Ndubuisi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ikechukwu Benson Ndubuisi: AI automation engineer and Head of Marketing. AI agents, automated video and eight years of crypto marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: alternating full-bleed colour fields (blush / aubergine), type-led, one enormous statement then typographic set pieces. Single committed look in both themes. */
+:root {
+  --blush: #edccbe;
+  --blush-2: #e5bcab;
+  --blush-pale: #fbefe9;
+  --aub: #351a2b;
+  --aub-2: #45263a;
+  --aub-soft: #c7a3b0;
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --step-small: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
+  --step-body: clamp(1.0625rem, 1.02rem + 0.3vw, 1.25rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --step-display: clamp(5rem, 21vw, 22rem);
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px), 3vw);
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px), 3vw);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--blush); color: var(--aub); font-family: var(--serif); font-size: var(--step-body); line-height: 1.6; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+::selection { background: var(--aub); color: var(--blush); }
+.field { padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: clamp(80px, 12vw, 200px); }
+.blush { background: var(--blush); color: var(--aub); }
+.aub { background: var(--aub); color: var(--blush); }
+h1, h2, h3 { font-weight: 400; text-wrap: balance; margin: 0; }
+h2 { font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.03em; }
+p { margin: 0; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font: 500 var(--step-small)/1 var(--serif); font-size: 1rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .18s ease, background-color .18s ease; }
+.btn:active { transform: scale(.97); }
+.blush .btn { background: var(--aub); color: var(--blush); }
+.aub .btn { background: var(--blush); color: var(--aub); }
+.btn:hover { transform: translateY(-2px); }
+
+/* Hero */
+.hero { min-height: min(100svh, 980px); display: grid; grid-template-rows: auto 1fr auto; padding-block: 24px 32px; }
+.hero-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 1rem; }
+.hero-top nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.hero-top nav a:not(.btn) { text-decoration: none; }
+.hero-top nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+.statement { align-self: start; margin-top: 9vh; font-weight: 300; font-size: var(--step-display); line-height: .84; letter-spacing: -0.05em; }
+.statement span { display: block; }
+.statement .pale { color: #8a5a6c; }
+.hero-foot { display: grid; grid-template-columns: 1fr minmax(0, 30rem); gap: 32px; align-items: end; }
+.hero-foot p { font-size: var(--step-lead); line-height: 1.35; grid-column: 2; }
+.hero-foot .role { font-size: var(--step-body); margin-top: 12px; color: var(--aub-2); line-height: 1.5; }
+
+/* Work: names as one paragraph */
+.names { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem); line-height: 1.3; letter-spacing: -0.03em; font-weight: 300; max-width: 70ch; }
+.names strong { font-weight: 400; color: var(--blush); }
+.names a { text-decoration: none; color: var(--aub-soft); transition: color .2s ease, opacity .2s ease; }
+.names a:hover, .names a:focus-visible { color: var(--blush); }
+.names a.dim { opacity: .35; }
+.names a.on { color: var(--blush); }
+.picker { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.picker p { width: 100%; font-size: var(--step-body); margin-bottom: 4px; }
+.chip { min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: var(--aub-2); color: var(--blush); font: 400 1rem var(--serif); cursor: pointer; transition: background-color .18s ease, transform .18s ease; }
+.chip:hover { transform: translateY(-2px); }
+.chip[aria-pressed="true"] { background: var(--blush); color: var(--aub); }
+.fit { margin-top: 24px; max-width: 46rem; font-size: var(--step-lead); line-height: 1.4; min-height: 3em; }
+.count { margin-top: 40px; font-size: 1rem; color: var(--aub-soft); }
+
+/* Projects */
+.project { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px clamp(24px, 4vw, 64px); align-items: start; }
+.project + .project { margin-top: clamp(96px, 12vw, 180px); }
+.project .copy { grid-column: 1 / span 6; min-width: 0; }
+.project .demo { grid-column: 8 / span 5; min-width: 0; }
+.project.flip .copy { grid-column: 7 / span 6; grid-row: 1; }
+.project.flip .demo { grid-column: 1 / span 5; grid-row: 1; }
+.project h3 { font-size: var(--step-head); line-height: 1; letter-spacing: -0.03em; font-weight: 400; }
+.project .what { font-size: var(--step-lead); line-height: 1.4; margin-top: 20px; }
+.project ul { margin: 24px 0 0; padding-left: 1.1em; display: grid; gap: 10px; }
+.project .stack { margin-top: 24px; font-size: var(--step-small); color: var(--aub-2); }
+.project .year { display: block; font-size: var(--step-body); letter-spacing: 0; margin-top: 10px; color: var(--aub-2); }
+
+/* Interface fragments (the work's own UI, rebuilt in HTML) */
+[data-ui] { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; line-height: 1.45; border-radius: 14px; overflow: hidden; }
+.wa { background: #0b141a; color: #e9edef; }
+.wa-head { background: #202c33; padding: 12px 16px; display: flex; gap: 12px; align-items: center; }
+.wa-av { width: 36px; height: 36px; border-radius: 50%; background: #25d366; color: #0b141a; display: grid; place-items: center; font-weight: 700; }
+.wa-head small { display: block; color: #8696a0; font-size: 13px; }
+.wa-body { padding: 16px; display: grid; gap: 8px; }
+.msg { max-width: 82%; padding: 8px 12px; border-radius: 10px; }
+.msg.in { background: #202c33; justify-self: start; }
+.msg.out { background: #005c4b; justify-self: end; }
+.msg .t { display: block; text-align: right; font-size: 11px; color: #c9d3d8; margin-top: 2px; }
+.ui-note { font-family: var(--serif); font-size: var(--step-small); margin-top: 12px; color: var(--aub-2); }
+.term { background: #1d1018; color: #f1dcd3; padding: 18px 20px; overflow-x: auto; }
+.term pre { margin: 0; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre; }
+.term .ok { color: #7fd8a4; }
+.term .dimt { color: #9c8090; }
+.queue { background: #fff8f4; color: #2a1622; }
+.queue-h { padding: 14px 18px; background: #f3e1d8; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.queue-h span { font-weight: 500; color: #8a3b2c; }
+.row { padding: 14px 18px; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; background: #fff8f4; }
+.row + .row { background: #fbefe9; }
+.row b { font-weight: 600; }
+.row small { color: #6c4857; grid-column: 1 / -1; font-size: 13px; }
+.pill { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: #f0d6cb; align-self: center; }
+.pill.lock { background: #351a2b; color: #fbefe9; }
+.films { display: grid; gap: 0; background: #1d1018; color: #f1dcd3; }
+.film { display: grid; grid-template-columns: 1fr auto; padding: 14px 18px; gap: 12px; }
+.film + .film { background: #24141e; }
+.film span { font-variant-numeric: tabular-nums; color: #c7a3b0; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 96px); }
+.facts { display: grid; gap: 24px; align-content: start; font-size: 1rem; }
+.facts b { display: block; font-weight: 500; font-size: 1rem; color: var(--aub-soft); }
+.about .wide { font-size: var(--step-lead); line-height: 1.45; letter-spacing: -0.01em; display: grid; gap: 1em; align-content: start; max-width: 46ch; }
+
+/* Photo + extra sections */
+.portrait { width: 100%; max-width: 320px; aspect-ratio: 555 / 640; object-fit: cover; filter: grayscale(1) contrast(1.05); display: block; margin-bottom: 8px; }
+.method { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 96px); align-items: start; }
+.method .lead { font-size: var(--step-lead); line-height: 1.45; margin-top: 24px; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.checks b { display: block; font-weight: 500; font-size: var(--step-lead); line-height: 1.3; margin-bottom: 6px; }
+.ventures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px clamp(32px, 5vw, 96px); margin-top: 56px; }
+.ventures h3 { font-size: var(--step-lead); font-weight: 500; line-height: 1.3; }
+.ventures .when { color: var(--aub-soft); font-size: 1rem; margin: 4px 0 10px; }
+.cvs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.cvs a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 999px; background: var(--aub-2); color: var(--blush); text-decoration: none; font-size: 1rem; transition: transform .18s ease; }
+.cvs a:hover { transform: translateY(-2px); }
+.cv-h { margin-top: 64px; font-size: var(--step-lead); font-weight: 500; }
+
+/* Experience: one per poster line */
+.lines { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: clamp(28px, 3.5vw, 48px); }
+.lines li { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 8px 32px; align-items: baseline; }
+.lines .r { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 3.5rem); line-height: 1.02; letter-spacing: -0.03em; font-weight: 300; }
+.lines .d { font-size: var(--step-body); }
+.lines .d i { display: block; color: var(--aub-2); }
+.extras { margin-top: clamp(80px, 9vw, 140px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.extras h3 { font-size: var(--step-lead); font-weight: 500; margin-bottom: 12px; }
+.extras p { font-size: 1.0625rem; }
+
+/* Contact */
+.contact h2 { margin-bottom: 48px; }
+.rows { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.rows a, .rows .addr { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 300; text-decoration: none; overflow-wrap: anywhere; }
+.rows a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
+.copyline { margin-top: 40px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.copyline output { font-size: 1rem; }
+.close { margin-top: clamp(96px, 12vw, 180px); font-size: clamp(3rem, 12vw, 11rem); line-height: .85; letter-spacing: -0.05em; font-weight: 300; color: var(--aub-soft); }
+.foot { margin-top: 24px; font-size: var(--step-small); color: var(--aub-soft); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* Entrance (content is visible at rest; JS only adds travel) */
+.rise { transition: transform .7s cubic-bezier(.2,.7,.2,1), opacity .7s ease; }
+.js .rise.pre { transform: translateY(24px); opacity: .001; }
+@media (prefers-reduced-motion: reduce) { .rise, .btn, .chip, .names a { transition: none !important; } .js .rise.pre { transform: none; opacity: 1; } html { scroll-behavior: auto; } }
+
+@media (max-width: 860px) {
+  .project .copy, .project .demo, .project.flip .copy, .project.flip .demo { grid-column: 1 / -1; grid-row: auto; }
+  .about, .method, .ventures { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lines li { grid-template-columns: 1fr; }
+  .extras { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .hero { min-height: 92svh; }
+  .hero-top nav a.hide-sm { display: none; }
+  .statement { font-size: 21vw; margin-top: 12vh; }
+  .hero-foot { grid-template-columns: 1fr; }
+  .hero-foot p { grid-column: 1; }
+  .names { font-size: 1.25rem; line-height: 1.4; }
+  .facts { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="field blush hero" id="top">
+  <div class="hero-top">
+    <span>Benson Ndubuisi</span>
+    <nav aria-label="Sections">
+      <a class="hide-sm" href="#work">Work</a>
+      <a class="hide-sm" href="#about">About</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="hide-sm" href="#contact">CV</a>
+      <a class="btn" href="#contact">Hire me</a>
+    </nav>
+  </div>
+  <h1 class="statement"><span class="pale">Ikechukwu</span><span>Benson.</span></h1>
+  <div class="hero-foot">
+    <div></div>
+    <p>I build AI agents that do real business work, and I’ve spent eight years selling and marketing in crypto.
+      <span class="role" style="display:block">AI automation engineer and Head of Marketing. Abuja, Nigeria. Open to relocate or work remote.</span></p>
+  </div>
+</header>
+
+<main>
+<section class="field aub" id="work" aria-labelledby="work-h">
+  <p class="names rise" id="names"><strong id="work-h">Selected work:</strong>
+    <a href="#quantsama" data-tags="eng growth eval">QUANTSAMA</a>,
+    <a href="#whatsapp" data-tags="eng growth">WhatsApp AI Sales Agent</a>,
+    <a href="#shorts" data-tags="eng video eval">the 06:00 Shorts pipeline</a>,
+    <a href="#films" data-tags="video growth eval">The $6.3 Billion Binance Heist</a>,
+    <a href="#films" data-tags="video">Binance: The Inside Job</a>,
+    <a href="#films" data-tags="video">The Billion-Dollar Lie</a>,
+    <a href="#films" data-tags="video">The Pruned Path</a>,
+    <a href="#naijanexus" data-tags="eng">NaijaNexus</a>,
+    <a href="#agents" data-tags="eng eval">a multi-agent dev setup</a>,
+    <a href="#experience" data-tags="growth video">PerfectRide STAKE promo</a>.
+  </p>
+
+  <div class="picker" role="group" aria-label="Show work for a role">
+    <p>Hiring for a role? Pick it to see the work that fits.</p>
+    <button class="chip" type="button" data-role="eng" aria-pressed="false">AI and automation engineering</button>
+    <button class="chip" type="button" data-role="video" aria-pressed="false">Video and content</button>
+    <button class="chip" type="button" data-role="growth" aria-pressed="false">Growth, marketing and Web3</button>
+    <button class="chip" type="button" data-role="eval" aria-pressed="false">AI evaluation</button>
+    <button class="chip" type="button" data-role="all" aria-pressed="true">Everything</button>
+  </div>
+  <p class="fit" id="fit" aria-live="polite">Ten projects from 2026, built alongside eight years of marketing work. Each one below says what it does and what is still unfinished.</p>
+</section>
+
+<section class="field blush" aria-label="Projects">
+  <article class="project" id="quantsama">
+    <div class="copy rise">
+      <h3>QUANTSAMA</h3><p class="year">2026</p>
+      <p class="what">A crypto trading research terminal where AI agents propose trades and only a human can approve them.</p>
+      <ul>
+        <li>Position sizes come from walk-forward GARCH(1,1) volatility forecasts, with regime multipliers and a hard exposure ceiling.</li>
+        <li>Proposal agents, a debate stage, a risk guardian and a backtester. On mainnet the guardian may only propose reduce-only exits; new entries are blocked in code.</li>
+        <li>The approval queue refuses every approval until a human arms the desk from the dashboard. Agents never hold the arming credential.</li>
+        <li>913 automated tests pass on the agents branch. Runs as a paper-trading deployment.</li>
+      </ul>
+      <p class="stack">Python, FastAPI, arch (GARCH), ccxt, Hyperliquid, React, TypeScript, Supabase, pytest</p>
+    </div>
+    <div class="demo rise">
+      <div data-ui class="queue" role="img" aria-label="Approval queue mock-up: two agent proposals waiting, desk not armed">
+        <div class="queue-h">Approval queue <span>Desk not armed</span></div>
+        <div class="row"><b>BTC-PERP · reduce 25%</b><span class="pill">Proposed</span><small>Risk guardian · volatility regime high · exit only</small></div>
+        <div class="row"><b>ETH-PERP · new long</b><span class="pill lock">Blocked</span><small>Mainnet entries are blocked in code</small></div>
+        <div class="row"><b>SOL-PERP · reduce 10%</b><span class="pill">Proposed</span><small>Debate stage · 2 of 3 agents agree</small></div>
+      </div>
+      <p class="ui-note">Illustration of the approval flow, rebuilt for this page. Sample rows, not live positions.</p>
+    </div>
+  </article>
+
+  <article class="project flip" id="whatsapp">
+    <div class="copy rise">
+      <h3>WhatsApp AI Sales Agent</h3><p class="year">2026</p>
+      <p class="what">An assistant on a small business’s WhatsApp line that answers customers at any hour, qualifies leads, sends payment links and hands over to a human.</p>
+      <ul>
+        <li>One configuration file per client (business.yaml) holds the catalogue, prices and tone.</li>
+        <li>Webhook signatures are verified; a tampered request gets a 401.</li>
+        <li>The same code now runs two client setups: a property agent and an events company that recruits expo delegates. 41 of 41 tests pass with zero credentials, end to end on mocks.</li>
+        <li>Next step: Meta Business Verification and live keys.</li>
+      </ul>
+      <p class="stack">TypeScript, Node.js, Fastify, Claude API, WhatsApp Cloud API, Paystack, Zod</p>
+    </div>
+    <div class="demo rise">
+      <div data-ui class="wa" role="img" aria-label="Sample WhatsApp conversation with the sales agent">
+        <div class="wa-head"><div class="wa-av">A</div><div>Abuja Homes (sample)<small>AI assistant · replies 24/7</small></div></div>
+        <div class="wa-body">
+          <div class="msg in">Good evening. Do you have 2-bedroom flats in Gwarinpa?<span class="t">21:47</span></div>
+          <div class="msg out">Good evening! Yes, two are open now, from ₦4.5m a year. Is this for you to live in, or to invest?<span class="t">21:47</span></div>
+          <div class="msg in">To live in. Can I see one this week?<span class="t">21:48</span></div>
+          <div class="msg out">Of course. I can book Thursday 11am or Saturday 2pm. A ₦20,000 inspection deposit holds the slot; I’ll send the Paystack link once you pick.<span class="t">21:48</span></div>
+        </div>
+      </div>
+      <p class="ui-note">Sample conversation for a fictional client, written to show the flow.</p>
+    </div>
+  </article>
+
+  <article class="project" id="shorts">
+    <div class="copy rise">
+      <h3>The 06:00 Shorts pipeline</h3><p class="year">2026</p>
+      <p class="what">Every morning at 06:00 a scheduled job makes a crypto news Short with no one at the keyboard.</p>
+      <ul>
+        <li>Pulls news from RSS, has an AI agent write the episode and voice-over, renders it in Remotion, runs an AI quality review with an optional second render.</li>
+        <li>Uploads it to YouTube as a private draft for human approval.</li>
+        <li>A lock with stale-lock recovery and a health probe for the scheduler and the agent login keep it running unattended.</li>
+      </ul>
+      <p class="stack">Python, Bash, macOS launchd, Claude Code CLI, Remotion, Kokoro TTS, YouTube Data API v3, OAuth 2.0</p>
+    </div>
+    <div class="demo rise">
+      <div data-ui class="term">
+<pre><span class="dimt">06:00:02</span>  lock acquired (stale lock cleared)
+<span class="dimt">06:00:09</span>  rss: 14 stories, 3 kept
+<span class="dimt">06:02:41</span>  script + voice-over written
+<span class="dimt">06:03:30</span>  tts: kokoro, 0:52
+<span class="dimt">06:09:12</span>  remotion render 1080x1920
+<span class="dimt">06:10:05</span>  review: <span class="ok">pass</span>
+<span class="dimt">06:11:20</span>  youtube: uploaded <span class="ok">private</span>
+<span class="dimt">06:11:21</span>  lock released</pre>
+      </div>
+      <p class="ui-note">Shape of a run log, condensed for this page.</p>
+    </div>
+  </article>
+
+  <article class="project flip" id="films">
+    <div class="copy rise">
+      <h3>Documentaries in code</h3><p class="year">Oct–Nov 2026</p>
+      <p class="what">Long-form crypto investigations written, voiced and edited in Remotion, with every claim fact-checked before recording.</p>
+      <ul>
+        <li>A cue system finds each spoken phrase in a whisper.cpp transcript, so scenes re-time themselves when the voice-over speed changes.</li>
+        <li>The fact-check caught an unsourced dollar figure and a finding credited to an outlet that could not be verified; both were fixed before voicing.</li>
+        <li>20-minute films rendered on an 8 GB laptop with resumable chunked renders. Masters at 1080p30, 40 Mbps, audio peaks below -1 dBFS.</li>
+        <li>Also a faith and motivation channel, The Pruned Path: five long-form videos in its first week. All uploads are private pending review.</li>
+      </ul>
+      <p class="stack">Remotion, FFmpeg, whisper.cpp, ElevenLabs, Kokoro TTS, ACE-Step, MoDA lip-sync, YouTube Data API</p>
+    </div>
+    <div class="demo rise">
+      <div data-ui class="films" role="list" aria-label="Film running times">
+        <div class="film" role="listitem">The $6.3 Billion Binance Heist <span>22:50</span></div>
+        <div class="film" role="listitem">Binance: The Inside Job, Part 1 <span>11:39</span></div>
+        <div class="film" role="listitem">Binance: The Inside Job, Part 2 <span>12:34</span></div>
+        <div class="film" role="listitem">The Billion-Dollar Lie (AI host) <span>20:24</span></div>
+        <div class="film" role="listitem">Memecoin Rug Pulls <span>6:52</span></div>
+        <div class="film" role="listitem">The Pruned Path, teaching <span>43:00</span></div>
+      </div>
+      <p class="ui-note">Screeners available on request.</p>
+    </div>
+  </article>
+
+  <article class="project" id="naijanexus">
+    <div class="copy rise">
+      <h3>NaijaNexus</h3><p class="year">2026</p>
+      <p class="what">A marketplace for Nigerian craftspeople: sellers upload photos and Claude Vision drafts the listing.</p>
+      <ul>
+        <li>Escrow orders move through one state machine; every illegal transition is rejected at a single point.</li>
+        <li>Payments, AI and storage sit behind mockable adapters, so the tests run without keys.</li>
+      </ul>
+      <p class="stack">TypeScript, Express, React, Prisma, PostgreSQL, Claude Vision API, Paystack, Docker, Vitest</p>
+    </div>
+    <div class="demo rise" id="agents">
+      <h3 style="font-size:var(--step-lead);font-weight:500">Multi-agent development setup</h3>
+      <p class="what" style="font-size:var(--step-body)">Eight specialised AI agent roles with tool-enforced limits (read-only reviewers cannot write), model routing by task cost and git worktrees for parallel work. Work moves from discovery to plan, approval, execution and verification, and a separate agent tries to disprove finished work before it is accepted.</p>
+    </div>
+  </article>
+</section>
+
+<section class="field aub" id="about" aria-labelledby="about-h">
+  <div class="about">
+    <div class="facts rise">
+      <img class="portrait" src="photo.jpg" width="555" height="640" alt="Portrait of Ikechukwu Benson Ndubuisi" loading="lazy">
+      <h2 id="about-h" style="font-size:var(--step-lead);font-weight:500">About</h2>
+      <p><b>Based in</b>Abuja, Nigeria (UTC+1)</p>
+      <p><b>Lived and worked in</b>Dubai, UAE, 2021–2022 (former UAE residence visa)</p>
+      <p><b>Open to</b>UAE, Qatar, Saudi Arabia, Germany, Netherlands, Canada, or remote</p>
+      <p><b>Notice period</b>Immediate. Needs an employment visa for roles abroad.</p>
+      <p><b>Working hours</b>UTC+1: a full overlap with Europe and part of the US East Coast</p>
+      <p><b>Languages</b>English, full professional, written and spoken</p>
+      <p><b>Setup</b>macOS workstation, fibre broadband with mobile-data backup, power backup</p>
+    </div>
+    <div class="wide rise">
+      <p>I came to engineering from marketing. Since 2018 I’ve sold and promoted health-tech, crypto and mobility products, so I build with the customer in mind first.</p>
+      <p>How I build: rules run before any AI model call, anything that touches money goes through one checked state machine, and every outside service has a mock so the tests run without credentials.</p>
+      <p>I use AI coding agents as my main development tool and check their work with a separate AI review pass and automated tests before it ships.</p>
+      <p>Before engineering I was an entrepreneur. I founded a crypto e-payment venture in 2018, lived and worked in Dubai from 2021 to 2022, and have travelled to Kenya for business. I studied Mass Communication, so writing for an audience comes first in everything I make.</p>
+    </div>
+  </div>
+</section>
+
+<section class="field blush" id="method" aria-labelledby="method-h">
+  <div class="method">
+    <div class="rise">
+      <h2 id="method-h">How I check AI work</h2>
+      <p class="lead">AI writes fast and sounds sure of itself. My job is to know when it is wrong before a customer, a viewer or a trading account finds out.</p>
+    </div>
+    <ul class="checks rise">
+      <li><b>Rate it against a written spec.</b>Finished work goes to a separate AI reviewer that checks it against the brief and returns confirmed or refuted. Nothing ships on the builder’s own word.</li>
+      <li><b>Fact-check claim by claim.</b>Every documentary script is checked before voicing. One check caught an unsourced dollar figure and a finding credited to an outlet that could not be verified; both were fixed.</li>
+      <li><b>Put rules before the model.</b>Fixed rules reject unsafe cases before any model call, and the model never has the final say on money.</li>
+      <li><b>Review AI-written code.</b>Each AI-generated pull request for the trading system went through an AI security-review pass; I decided merge-after-fixes, and fixes were re-tested before merging.</li>
+      <li><b>Keep the evidence.</b>Labelled JSONL logs, including rejected trading signals, so filtering decisions can be checked statistically later.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="field aub" id="ventures" aria-labelledby="ventures-h">
+  <h2 id="ventures-h" class="rise">Ventures and Web3 work</h2>
+  <div class="ventures">
+    <div class="rise"><h3>B-BenzHodling E-Payment</h3><p class="when">Founder, 2018 to now</p><p>An e-payment venture aimed at crypto adoption across Africa.</p></div>
+    <div class="rise"><h3>PhoenixBot</h3><p class="when">Founder, 2024 to now</p><p>An AI-powered automated trading platform (phoenixbot.io).</p></div>
+    <div class="rise"><h3>BAS Network and Nimedix.care</h3><p class="when">Co-founder, with NiMEDix</p><p>Blockchain initiatives in healthcare, focused on real-world use.</p></div>
+    <div class="rise"><h3>TitanX, ZugaCoin, LFi and Orion</h3><p class="when">Growth and business development consultant</p><p>Ecosystem strategy and African market expansion for Web3 projects.</p></div>
+    <div class="rise"><h3>Yieldium</h3><p class="when">Founder</p><p>A DeFi yield project with automated strategies.</p></div>
+    <div class="rise"><h3>MOONSIGNAL</h3><p class="when">Creator</p><p>A crypto education and investment community.</p></div>
+  </div>
+</section>
+
+<section class="field blush" id="experience" aria-labelledby="exp-h">
+  <h2 id="exp-h" class="rise">Experience</h2>
+  <ol class="lines" reversed>
+    <li class="rise"><span class="r">AI Automation Engineer and Founder</span><span class="d">Self-employed, Abuja (remote)<i>2026 to now. AI growth and automation strategist since 2023. Founded PhoenixBot and B-BenzHodling E-Payment.</i></span></li>
+    <li class="rise"><span class="r">West Africa Regional Coordinator, SAIS Events</span><span class="d">Partner, hosted-buyer trade expos (Nairobi-based organiser)<i>Nov 2026 to now. Recruit serious Nigerian business delegates for AGROEXPO Izmir and AFROPLAST Cairo, where they meet investors and manufacturers in pre-arranged deal meetings.</i></span></li>
+    <li class="rise"><span class="r">Head of Marketing, PerfectRide</span><span class="d">Vehicle business investment platform, hybrid Canada and Nigeria<i>Jan 2025 to now. Made a 47-second AI-host promo for the STAKE product.</i></span></li>
+    <li class="rise"><span class="r">Sales and Marketing Manager, Cladex</span><span class="d">Multichain crypto platform, part-time<i>Feb 2026 to now.</i></span></li>
+    <li class="rise"><span class="r">Marketing Manager, NiMEDix</span><span class="d">Health-tech and blockchain company, Abuja<i>Jan 2018 to now. Marketing strategy and blockchain analysis.</i></span></li>
+  </ol>
+  <div class="extras">
+    <div class="rise"><h3>Skills</h3><p>Python, TypeScript, SQL, Bash, Claude API and tool use, LLM output rating, prompt engineering, multi-agent systems, FastAPI, Fastify, React, PostgreSQL, Supabase, Docker, Remotion, FFmpeg, WhatsApp Cloud API, Paystack, YouTube Data API, GARCH and backtesting, go-to-market strategy, community building on Telegram, X and WhatsApp, partnerships, DeFi, on-chain analysis, scriptwriting.</p></div>
+    <div class="rise"><h3>Certifications</h3><p>AI Fluency: Framework and Foundations, Anthropic, July 2026, delivered with University College Cork.<br>Claude Code 101, Anthropic, July 2026.</p></div>
+    <div class="rise"><h3>Education</h3><p>Ordinary National Diploma, Mass Communication, Federal Polytechnic Bida, 2014–2016.</p></div>
+  </div>
+</section>
+
+<section class="field aub contact" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h" class="rise">Let’s talk about the role.</h2>
+  <ul class="rows rise">
+    <li><span class="addr" id="email">flourish70000@gmail.com</span></li>
+    <li><a href="https://www.linkedin.com/in/ikechukwu-benson-ndubuisi-890486139" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/flourish80000-ctrl" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <div class="copyline">
+    <button class="btn" type="button" id="copy">Copy email address</button>
+    <output id="copied" aria-live="polite"></output>
+  </div>
+  <h3 class="cv-h rise">Download a CV for the role</h3>
+  <div class="cvs rise">
+    <a href="cv/Benson_Ndubuisi_CV_ai_engineer.pdf" target="_blank" rel="noopener">AI automation engineer (PDF)</a>
+    <a href="cv/Benson_Ndubuisi_CV_ai_content_producer.pdf" target="_blank" rel="noopener">AI video and content (PDF)</a>
+    <a href="cv/Benson_Ndubuisi_CV_growth_web3.pdf" target="_blank" rel="noopener">Growth and Web3 (PDF)</a>
+    <a href="cv/Benson_Ndubuisi_CV_ai_evaluation.pdf" target="_blank" rel="noopener">AI evaluation (PDF)</a>
+  </div>
+  <p class="close" aria-hidden="true">Benson.</p>
+  <div class="foot"><span>Ikechukwu Benson Ndubuisi</span><span>References on request</span></div>
+</section>
+</main>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var copyText = {
+    eng: 'For engineering roles: QUANTSAMA, the WhatsApp agent, the Shorts pipeline, NaijaNexus and the agent setup show Python and TypeScript systems with tests, guard rails and human approval.',
+    video: 'For video and content roles: the documentaries, The Pruned Path, the Shorts pipeline and the PerfectRide promo show scripting, fact-checking, AI voice and editing in code.',
+    growth: 'For growth and Web3 roles: eight years of marketing at NiMEDix, PerfectRide and Cladex, Web3 market entry work for TitanX, ZugaCoin, LFi and Orion, and the tools I build to sell.',
+    eval: 'For AI evaluation roles: I check AI output against a written spec, fact-check scripts claim by claim, and design systems where rules, not the model, have the final say on money. See how I check AI work below.',
+    all: 'Ten projects from 2026, built alongside eight years of marketing work. Each one below says what it does and what is still unfinished.'
+  };
+  var names = document.querySelectorAll('#names a');
+  var fit = document.getElementById('fit');
+  document.querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var r = b.dataset.role;
+      document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
+      names.forEach(function (a) {
+        var hit = r === 'all' || a.dataset.tags.split(' ').indexOf(r) > -1;
+        a.classList.toggle('dim', !hit);
+        a.classList.toggle('on', hit && r !== 'all');
+      });
+      fit.textContent = copyText[r];
+    });
+  });
+
+  var btn = document.getElementById('copy'), out = document.getElementById('copied');
+  btn.addEventListener('click', function () {
+    var email = document.getElementById('email');
+    function select() { var s = getSelection(), rg = document.createRange(); rg.selectNodeContents(email); s.removeAllRanges(); s.addRange(rg); out.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email.textContent.trim()).then(function () { out.textContent = 'Copied.'; }, select);
+    } else select();
+  });
+
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var els = document.querySelectorAll('.rise');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el, i) {
+      var r = el.getBoundingClientRect();
+      if (r.top > innerHeight) { el.classList.add('pre'); el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
